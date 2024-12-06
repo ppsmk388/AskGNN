@@ -15,12 +15,21 @@ python gen_result_local_llm.py  --stru sage   --dataset ogbn-arxiv --ratio 0.05
 
 ```
 
-+ --stru: The type of GNN architecture to use (e.g., sage for GraphSAGE).
-+ --dataset: The graph dataset to use (e.g., ogbn-arxiv).
-+ --ratio: The proportion of data to use (e.g., 0.05 represents 5%).
+- `--stru`: The type of GNN architecture to use (e.g., `sage` for GraphSAGE).
+- `--dataset`: The graph dataset to use (e.g., `ogbn-arxiv`).
+- `--ratio`: The proportion of data to use (e.g., 0.05 represents 5%).
 
-执行下面的脚本进行LLM的inference
+
+
+After training the GNN and generating embeddings, the next step is to perform inference with a Large Language Model (LLM). Use the following command for inference:
+
+
 ```python
 python llm_inference.py  --stru sage   --dataset ogbn-arxiv --ratio 0.05  --llm_model qwen
 
 ```
+
+- `--stru`: Specifies the GNN model (e.g., `sage`).
+- `--dataset`: The graph dataset to use (e.g., `ogbn-arxiv`).
+- `--ratio`: The proportion of the dataset to use (same as in the training step).
+- `--llm_model`: The LLM model to use (e.g., `qwen`).
